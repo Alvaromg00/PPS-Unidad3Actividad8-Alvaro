@@ -2,12 +2,13 @@
 
 ## Indice
 
-> 1. [Explotación LFI](#)  
-> 	1.1 [Ejecutar código PHP (PHP Wrappers)](#)  
-> 2. [Mitigación de LFI]()  
-> 	2.1 [Usar una Lista Blanca de Archivos Permitidos]()  
-> 	2.2 [Bloquear Secuencias de Directorios (../)]()  
-> 	2.3 [Uso de realpath() para Evitar Path Traversal]()  
+> 1. [Explotación LFI](#explotación-lfi)  
+> 	1.1 [Ejecutar código PHP (PHP Wrappers)](#ejecutar-código-php-php-wrappers)  
+>	1.2 [Envenenamiento de logs](#)  
+> 2. [Mitigación de LFI](#mitigación-de-lfi)  
+> 	2.1 [Usar una Lista Blanca de Archivos Permitidos](#usar-una-lista-blanca-de-archivos-permitidos)  
+> 	2.2 [Bloquear Secuencias de Directorios (../)](#bloquear-secuencias-de-directorios-)  
+> 	2.3 [Uso de realpath() para Evitar Path Traversal](#uso-de-realpath-para-evitar-path-traversal)  
 
 -----
 
@@ -33,6 +34,17 @@ Si lo introducimos aparece el contenido de */etc/passwd*, con lo cual ya sabemos
 
 ### Ejecutar código PHP (PHP Wrappers)
 
+Vamos a extraer el código fuente del archivo *index.html* del servidor:
+
+![lfi.php](./Imagenes/5.png)
+
+Obtenemos una cadena en base 64, la copiamos y la decodificamos con el siguiente comando:
+
+![lfi.php](./Imagenes/6.png)
+
+Ya hemos obtenido el contenido del index.html.
+
+### Envenenamiento de logs
 
 
 ## Mitigación de LFI
